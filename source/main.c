@@ -55,6 +55,7 @@ int main(int argc, char* argv[])
 	else {
 		NifmNetworkProfileData_new* profile = malloc(sizeof(NifmNetworkProfileData_new));
 		rc = nifmGetCurrentNetworkProfile((NifmNetworkProfileData*)profile);
+		nifmExit();
 		if (R_FAILED(rc)) {
 			printf("GetCurrentNetworkProfile failed: 0x%x\n", rc);
 			if (rc == 0xd46e)
